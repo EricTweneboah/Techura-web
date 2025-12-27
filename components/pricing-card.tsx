@@ -44,7 +44,14 @@ export function PricingCard({
         </ul>
       </CardContent>
       <CardFooter>
-        <Button variant={highlighted ? "glow" : "outline"} className="w-full" asChild>
+        <Button
+          variant={highlighted ? "glow" : "outline"}
+          className={cn(
+            "w-full",
+            !highlighted && "border-white/30 bg-white/10 text-foreground hover:bg-white/20"
+          )}
+          asChild
+        >
           <Link href="/contact">Choose {name}</Link>
         </Button>
       </CardFooter>

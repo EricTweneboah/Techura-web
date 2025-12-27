@@ -31,7 +31,7 @@ export default function ServicesPage() {
         subtitle="From discovery to long-term support, Techura delivers end-to-end product design and engineering."
       />
 
-      <SectionContainer className="pt-0">
+      <SectionContainer className="pt-0 -mt-6">
         <Reveal>
           <Tabs defaultValue={services[0]?.slug}>
             <TabsList className="flex flex-wrap gap-2">
