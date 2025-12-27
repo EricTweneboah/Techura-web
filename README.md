@@ -36,7 +36,3 @@ npm run dev
 - `public/` - Static assets (logos, project placeholders)
 - `lib/` - Utilities
 
-## Notes
-
-- Replace placeholder logos in `public/logos/` once you have rights to use client marks.
-- Configure email with Resend using `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`.
