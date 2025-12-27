@@ -21,7 +21,7 @@ export default function PrivacyPage() {
           <div className="space-y-3">
             <h2 className="text-base font-semibold text-foreground">Overview</h2>
             <p>
-              This Privacy Policy explains how Techura ("we", "us", "our") collects, uses, and safeguards personal data when you visit techura.co.uk, contact us, or engage our services.
+              This Privacy Policy explains how Techura (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) collects, uses, and safeguards personal data when you visit techura.co.uk, contact us, or engage our services.
             </p>
           </div>
 

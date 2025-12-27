@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -42,7 +42,7 @@ export function ContactForm() {
     resolver: zodResolver(contactSchema),
   });
 
-  const renderRecaptcha = () => {
+  const renderRecaptcha = useCallback(() => {
     if (!siteKey || !recaptchaRef.current) return;
     if (recaptchaWidgetId.current !== null) return;
     const grecaptcha = window.grecaptcha;
@@ -57,7 +57,7 @@ export function ContactForm() {
         setValue("captchaToken", "", { shouldValidate: true });
       },
     });
-  };
+  }, [setValue, siteKey]);
 
   useEffect(() => {
     let retries = 0;
@@ -69,7 +69,7 @@ export function ContactForm() {
     };
 
     tryRender();
-  }, [siteKey]);
+  }, [renderRecaptcha]);
 
   const onSubmit = async (values: ContactFormValues) => {
     setIsSubmitting(true);

@@ -70,7 +70,7 @@ export default function TermsPage() {
           <div className="space-y-3">
             <h2 className="text-base font-semibold text-foreground">Warranties and disclaimers</h2>
             <p>
-              Services are provided on an "as-is" basis. Techura does not warrant uninterrupted operation or specific business outcomes, except as expressly stated in writing.
+              Services are provided on an &quot;as-is&quot; basis. Techura does not warrant uninterrupted operation or specific business outcomes, except as expressly stated in writing.
             </p>
           </div>
 
