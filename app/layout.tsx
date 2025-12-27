@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 import "@/app/globals.css";
 import { AnimatedBackground } from "@/components/animated-background";
@@ -111,6 +112,7 @@ export default function RootLayout({
             <Navbar />
             <main>{children}</main>
             <Footer />
+            <Analytics />
             <Toaster />
           </div>
         </ThemeProvider>
