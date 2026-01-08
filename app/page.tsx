@@ -109,7 +109,6 @@ export default function HomePage() {
             <p className="text-xs uppercase tracking-[0.2em] text-primary">Trusted by teams worldwide</p>
             <h2 className="section-title">Chosen by ambitious brands</h2>
             <p className="section-subtitle mx-auto">
-              Replace these placeholders with real client logos once permission is secured.
             </p>
           </div>
         </Reveal>
