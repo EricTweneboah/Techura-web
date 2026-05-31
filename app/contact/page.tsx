@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/contact-form";
 import { PageHeader } from "@/components/page-header";
 import { Reveal } from "@/components/reveal";
 import { SectionContainer } from "@/components/section-container";
-import Script from "next/script";
+import { bookingUrl } from "@/lib/booking";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -40,16 +40,13 @@ export default function ContactPage() {
                 <p className="mt-2 text-sm text-muted-foreground">
                   Book a 30-minute discovery call with our team.
                 </p>
-                <div
-                  className="calendly-inline-widget mt-4 min-w-[320px] rounded-2xl border border-white/10 bg-white/40 dark:bg-white/5"
-                  data-url="https://calendly.com/techura-support/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                <iframe
+                  title="Schedule a Techura consultation"
+                  src={bookingUrl}
+                  className="mt-4 w-full min-w-[320px] rounded-2xl border border-white/10 bg-white"
                   style={{ height: 520 }}
                 />
               </div>
-              <Script
-                src="https://assets.calendly.com/assets/external/widget.js"
-                strategy="lazyOnload"
-              />
               <div className="rounded-3xl border border-white/10 bg-white/60 p-6 text-sm dark:bg-white/5">
                 <h3 className="text-lg font-semibold">Company info</h3>
                 <p className="mt-2 text-muted-foreground">support@techura.co.uk</p>
