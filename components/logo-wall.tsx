@@ -18,7 +18,7 @@ export function LogoWall() {
                 width={140}
                 height={60}
                 sizes="140px"
-                className="h-10 w-auto opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 dark:invert"
+                className="max-h-12 w-auto max-w-[150px] object-contain opacity-80 transition-opacity duration-300 hover:opacity-100"
               />
             </div>
           ))}

@@ -32,7 +32,7 @@ npm run dev
 - `app/` - App Router pages, API routes, metadata
 - `components/` - Reusable UI + layout components
 - `components/ui/` - shadcn/ui primitives
-- `content/` - Data-driven content (services, projects, pricing)
+- `content/` - Data-driven content (services, projects, FAQs)
 - `public/` - Static assets (logos, project placeholders)
 - `lib/` - Utilities
 

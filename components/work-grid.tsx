@@ -32,6 +32,8 @@ export function WorkGrid() {
             summary={project.summary}
             category={project.category}
             image={project.gallery[0]}
+            logo={project.logoPath}
+            href={project.href}
           />
         ))}
       </div>

@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { WORK_PAGE_ENABLED } from "@/lib/site-flags";
-
 export function Footer() {
   return (
     <footer className="border-t border-white/10">
@@ -28,13 +26,8 @@ export function Footer() {
             <Link href="/services" className="block text-muted-foreground hover:text-foreground">
               Services
             </Link>
-            {WORK_PAGE_ENABLED ? (
-              <Link href="/work" className="block text-muted-foreground hover:text-foreground">
-                Work
-              </Link>
-            ) : null}
-            <Link href="/pricing" className="block text-muted-foreground hover:text-foreground">
-              Pricing
+            <Link href="/projects" className="block text-muted-foreground hover:text-foreground">
+              Projects
             </Link>
           </div>
           <div className="space-y-2">

@@ -7,16 +7,14 @@ import { Moon, Sun } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { ConsultationDialog } from "@/components/consultation-dialog";
-import { WORK_PAGE_ENABLED } from "@/lib/site-flags";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/services", label: "Services" },
-  { href: "/work", label: "Work" },
+  { href: "/projects", label: "Projects" },
   { href: "/about", label: "About" },
-  { href: "/pricing", label: "Pricing" },
   { href: "/contact", label: "Contact" },
-].filter((link) => WORK_PAGE_ENABLED || link.href !== "/work");
+];
 
 export function Navbar() {
   const { theme, setTheme } = useTheme();
@@ -52,13 +50,11 @@ export function Navbar() {
             <Sun className="h-4 w-4 dark:hidden" />
             <Moon className="h-4 w-4 hidden dark:block" />
           </Button>
-          {WORK_PAGE_ENABLED ? (
-            <Link href="/work" className="hidden md:inline-flex">
-              <Button variant="outline" size="sm">
-                View Work
-              </Button>
-            </Link>
-          ) : null}
+          <Link href="/projects" className="hidden md:inline-flex">
+            <Button variant="outline" size="sm">
+              View Projects
+            </Button>
+          </Link>
           <ConsultationDialog triggerText="Schedule meeting" />
         </div>
       </div>

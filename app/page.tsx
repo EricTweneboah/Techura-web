@@ -11,12 +11,10 @@ import { Reveal } from "@/components/reveal";
 import { SectionContainer } from "@/components/section-container";
 import { ServiceCard } from "@/components/service-card";
 import { TestimonialCard } from "@/components/testimonial-card";
-import { pricingPackages } from "@/content/pricing";
 import { faqs } from "@/content/faqs";
 import { projects } from "@/content/projects";
 import { differentiators, processSteps, services } from "@/content/services";
 import { testimonials } from "@/content/testimonials";
-import { WORK_PAGE_ENABLED } from "@/lib/site-flags";
 
 const iconMap = {
   Code,
@@ -51,14 +49,14 @@ export default function HomePage() {
             <Reveal delay={0.15}>
               <div className="flex flex-wrap items-center gap-4">
                 <PrimaryCTA />
-                {WORK_PAGE_ENABLED ? <SecondaryCTA /> : null}
+                <SecondaryCTA href="/projects">View Projects</SecondaryCTA>
               </div>
             </Reveal>
             <Reveal delay={0.2}>
               <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-2">
                   <Star className="h-4 w-4 text-primary" />
-                  Trusted by ambitious teams worldwide
+                  Trusted by ambitious project teams
                 </span>
                 <span className="flex items-center gap-2">
                   <Zap className="h-4 w-4 text-primary" />
@@ -191,34 +189,34 @@ export default function HomePage() {
         </div>
       </SectionContainer>
 
-      {WORK_PAGE_ENABLED ? (
-        <SectionContainer className="pt-0">
-          <Reveal>
-            <div className="flex items-center justify-between">
-              <div>
-                <h2 className="section-title">Featured work</h2>
-                <p className="section-subtitle">A few recent builds across SaaS, commerce, and mobile.</p>
-              </div>
-              <Link href="/work" className="hidden md:inline-flex">
-                <Button variant="outline">Explore portfolio</Button>
-              </Link>
+      <SectionContainer className="pt-0">
+        <Reveal>
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="section-title">Featured projects</h2>
+              <p className="section-subtitle">A few recent builds across healthcare, government, agritech, and brand websites.</p>
             </div>
-          </Reveal>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {featured.map((project, index) => (
-              <Reveal key={project.slug} delay={index * 0.08}>
-                <CaseStudyCard
-                  slug={project.slug}
-                  name={project.name}
-                  summary={project.summary}
-                  category={project.category}
-                  image={project.gallery[0]}
-                />
-              </Reveal>
-            ))}
+            <Link href="/projects" className="hidden md:inline-flex">
+              <Button variant="outline">Explore projects</Button>
+            </Link>
           </div>
-        </SectionContainer>
-      ) : null}
+        </Reveal>
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {featured.map((project, index) => (
+            <Reveal key={project.slug} delay={index * 0.08}>
+              <CaseStudyCard
+                slug={project.slug}
+                name={project.name}
+                summary={project.summary}
+                category={project.category}
+                image={project.gallery[0]}
+                logo={project.logoPath}
+                href={project.href}
+              />
+            </Reveal>
+          ))}
+        </div>
+      </SectionContainer>
 
       <SectionContainer className="pt-0">
         <Reveal>
@@ -233,31 +231,6 @@ export default function HomePage() {
           {testimonials.map((item, index) => (
             <Reveal key={item.name} delay={index * 0.06}>
               <TestimonialCard quote={item.quote} name={item.name} title={item.title} />
-            </Reveal>
-          ))}
-        </div>
-      </SectionContainer>
-
-      <SectionContainer className="pt-0">
-        <Reveal>
-          <div className="space-y-3">
-            <h2 className="section-title">Flexible pricing, premium execution</h2>
-            <p className="section-subtitle">
-              Choose a package or build a custom engagement. We can scope within your timeline and budget.
-            </p>
-          </div>
-        </Reveal>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {pricingPackages.map((pkg, index) => (
-            <Reveal key={pkg.name} delay={index * 0.08}>
-              <div className="rounded-2xl border border-white/10 bg-white/60 p-6 text-sm dark:bg-white/5">
-                <p className="text-lg font-semibold">{pkg.name}</p>
-                <p className="mt-2 text-2xl font-semibold">{pkg.price}</p>
-                <p className="mt-2 text-muted-foreground">{pkg.bestFor}</p>
-                <Link href="/pricing" className="mt-6 inline-flex items-center text-primary hover:underline">
-                  View details <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
             </Reveal>
           ))}
         </div>
@@ -288,7 +261,7 @@ export default function HomePage() {
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <PrimaryCTA />
-              {WORK_PAGE_ENABLED ? <SecondaryCTA /> : null}
+              <SecondaryCTA href="/projects">View Projects</SecondaryCTA>
             </div>
           </div>
         </Reveal>

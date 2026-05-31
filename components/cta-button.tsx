@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { WORK_PAGE_ENABLED } from "@/lib/site-flags";
 
 export function PrimaryCTA({
   href = "/contact",
@@ -19,16 +18,12 @@ export function PrimaryCTA({
 }
 
 export function SecondaryCTA({
-  href = "/work",
-  children = "View Work",
+  href = "/projects",
+  children = "View Projects",
 }: {
   href?: string;
   children?: React.ReactNode;
 }) {
-  if (!WORK_PAGE_ENABLED) {
-    return null;
-  }
-
   return (
     <Link href={href}>
       <Button variant="outline" size="lg">
